@@ -6,13 +6,14 @@
     <title>The Malinka Band</title>
     <link rel="stylesheet" href="css/index.css">
     <script src="node_modules/jquery/dist/jquery.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="js/index.js" defer></script>
 </head>
 <body>
 
     <header>
 
-        <div id="logo">lololololo</div>
+        <div id="logo">LOGO</div>
         <nav>
             <button id="sidebar-toggle">Hamburger</button>
             <ul>
@@ -32,9 +33,36 @@
 
     <main>
 
-        <div id="hero" class="carousel"></div>
+        <div id="hero" class="bg-slate-500 w-full h-80 flex justify-center gap-5">
 
-        <div id="profile" class="profile"></div>
+            <img class="w-10" src="media/svg/arrows-long-left-svgrepo-com.svg">
+            <div class="carousel">
+                <img class="h-80" src="media/img/hero.png">
+            </div>
+            <img class="w-10" src="media/svg/arrows-long-right-svgrepo-com.svg">
+
+        </div>
+
+        <div id="profile" class="profile bg-slate-300 flex flex-col justify-center items-center">
+
+            <h1>The Malinka Band</h1>
+
+
+            <button class="flex items-center">
+                <img class="w-5" src="media/svg/arrows-long-right-svgrepo-com.svg">
+                <p>Kontakt</p>
+            </button>
+
+            <div class="bg-black w-100 h-0.5"></div>
+
+            <div>
+                <div>
+                    <p>Bar</p>
+                    <img>
+                </div>
+            </div>
+
+        </div>
 
         <div id="members" class="carousel"></div>
 

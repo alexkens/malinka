@@ -1,12 +1,14 @@
 // header
-
-const x = $( "#logo" ).html();
-console.log(x);
-
-
 $("#sidebar-toggle").on("click", function() {
 
-    $( "#aside" ).load("aside.txt");
-
-    // $("aside").css("display", "block");
+    let aside = $( "#aside aside" );
+    if(aside.length == 0) {
+        $( "#aside" ).load("aside.html");
+    } else {
+        if(aside.css("display") === "none") {
+            aside.css("display", "block");
+        } else { // display != none
+            aside.css("display", "none");
+        }
+    }
 });

@@ -4,28 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Malinka Band</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/dist_index.css">
     <script src="node_modules/jquery/dist/jquery.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="js/index.js" defer></script>
 </head>
 <body>
 
-    <header>
+    <header class="flex justify-between items-center gap-6">
 
-        <div id="logo">LOGO</div>
-        <nav>
-            <button id="sidebar-toggle">Hamburger</button>
-            <ul>
+        <div id="logo">
+            <a href="index.html">
+                <img src="media/logo/MALINKA logo 149x59.png">
+            </a>
+        </div>
+
+        <button id="sidebar-toggle">
+            <img class="w-8" src="media/svg/hamburger-menu-svgrepo-com.svg">
+        </button>
+
+        <nav class="gap-6 hidden">
+            <ul class="flex items-center gap-5">
                 <li><a></a>Home</li>
                 <li><a></a>Gallerie</li>
                 <li><a></a>Termine</li>
-                <li><a></a>Buchen</li>
+                <li><a href="contact.html"></a>Buchen</li>
             </ul>
         </nav>
 
-        <div id="lang">En</div>
-        <div id="mode">Dark</div>
+        <div class="flex flex-col w-20 p-3 bg-slate-300">
+            <div class="" id="lang">En</div>
+            <div class="" id="mode">Dark</div>
+        </div>
 
     </header>
 
@@ -43,17 +53,18 @@
 
         </div>
 
-        <div id="profile" class="profile bg-slate-300 flex flex-col justify-center items-center">
+        <div id="profile" class="profile bg-slate-300 flex flex-col justify-center items-center p-5 gap-5">
 
-            <h1>The Malinka Band</h1>
+            <h1 class="text-2xl font-futura">The Malinka Band</h1>
 
+            <a href="contact.html">
+                <button class="flex justify-evenly items-center gap-2 bg-slate-500 w-30 h-10 text-white">
+                    <img class="w-5" src="media/svg/arrows-long-right-svgrepo-com.svg">
+                    <p>Kontakt</p>
+                </button>
+            </a>
 
-            <button class="flex items-center">
-                <img class="w-5" src="media/svg/arrows-long-right-svgrepo-com.svg">
-                <p>Kontakt</p>
-            </button>
-
-            <div class="bg-black w-100 h-0.5"></div>
+            <div class="bg-black w-[80%] h-0.5"></div>
 
             <div>
                 <div>

@@ -25,57 +25,98 @@
 
         <nav class="gap-6 hidden">
             <ul class="flex items-center gap-5">
-                <li><a></a>Home</li>
-                <li><a></a>Gallerie</li>
-                <li><a></a>Termine</li>
-                <li><a href="contact.html"></a>Buchen</li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallerie</a></li>
+                <li><a href="appointments.html">Termine</a></li>
+                <li><a href="contact.html">Buchen</a></li>
             </ul>
         </nav>
 
-        <div class="flex flex-col w-20 p-3 bg-slate-300">
-            <div class="" id="lang">En</div>
-            <div class="" id="mode">Dark</div>
+        <div class="flex flex-col p-2 bg-slate-200 font-avenir">
+            <a class="hover:text-white active:opacity-50" href="" id="lang">En</a>
+            <a class="hover:text-white active:opacity-50" href="" id="mode">Darkmode</a>
         </div>
 
     </header>
 
-    <div id="aside"></div>
+    <div id="aside" class="bg-slate-300 flex justify-center items-center font-avenir"></div>
 
     <main>
 
-        <div id="hero" class="bg-slate-500 w-full h-80 flex justify-center gap-5">
+        <div id="hero" class="bg-slate-300 w-full h-80 flex items-center justify-center gap-5">
 
-            <img class="w-10" src="media/svg/arrows-long-left-svgrepo-com.svg">
-            <div class="carousel">
-                <img class="h-80" src="media/img/hero.png">
+            <a onclick="heroCarouselLeft()">
+                <img class="w-10" src="media/svg/arrows-long-left-svgrepo-com.svg">
+            </a>
+            <div id="hero-carousel" class="carousel">
+                <img class="h-80" src="">
             </div>
-            <img class="w-10" src="media/svg/arrows-long-right-svgrepo-com.svg">
-
-        </div>
-
-        <div id="profile" class="profile bg-slate-300 flex flex-col justify-center items-center p-5 gap-5">
-
-            <h1 class="text-2xl font-futura">The Malinka Band</h1>
-
-            <a href="contact.html">
-                <button class="flex justify-evenly items-center gap-2 bg-slate-500 w-30 h-10 text-white">
-                    <img class="w-5" src="media/svg/arrows-long-right-svgrepo-com.svg">
-                    <p>Kontakt</p>
-                </button>
+            <a onclick="heroCarouselRight()">
+                <img class="w-10" src="media/svg/arrows-long-right-svgrepo-com.svg">
             </a>
 
-            <div class="bg-black w-[80%] h-0.5"></div>
+        </div>
 
-            <div>
-                <div>
-                    <p>Bar</p>
-                    <img>
+        <div id="profile" class="profile flex flex-col justify-center items-center p-5 gap-5">
+
+            <div class="flex items-center gap-2 text-5xl font-futura">
+                <h1>The</h1>
+                <img class="" src="media/logo/MALINKA logo 244x97.png">
+                <h1>Band</h1>
+            </div>
+
+            <div class="flex flex-col gap-6 items-center w-full">
+
+                <a href="contact.html">
+                    <button class="flex justify-evenly items-center gap-2 bg-slate-500 w-30 h-10 text-white font-avenir shadow-md">
+                        <img class="w-5" src="media/svg/arrows-long-right-svgrepo-com.svg">
+                        <p>Kontakt</p>
+                    </button>
+                </a>
+
+                <div class="bg-black w-[80%] h-0.5 rounded-full"></div>
+
+                <div class="flex gap-10 font-avenir">
+                    <div class="flex flex-col items-center gap-2">
+                        <p>Bar</p>
+                        <img class="w-10" src="media/svg/cocktail-svgrepo-com.svg">
+                    </div>
+                    <div class="bg-black w-0.5 h-20 rounded-full"></div>
+
+                    <div class="flex flex-col items-center gap-2">
+                        <p>Restaurant</p>
+                        <img class="w-10" src="media/svg/restaurant-plate-svgrepo-com.svg">
+                    </div>
+                    <div class="bg-black w-0.5 h-20 rounded-full"></div>
+
+                    <div class="flex flex-col items-center gap-2">
+                        <p>Feiern</p>
+                        <img class="w-10" src="media/svg/balloons-birthday-svgrepo-com.svg">
+                    </div>
                 </div>
+            
             </div>
 
         </div>
 
-        <div id="members" class="carousel"></div>
+        <div class="bg-slate-300 h-120 flex flex-col justify-center items-center">
+            <div id="members" class="carousel bg-white w-[100%] h-[80%] flex items-center justify-center gap-8 p-10">
+                <div class="w-80 flex flex-col gap-2">
+                    <h2 class="member-name text-xl"></h2>
+                    <p class="member-instrument"></p>
+                    <div class="member-text text-sm text-justify"></div>
+                </div>
+                <img class="member-img h-full" src="">
+            </div>
+            <div class="">
+                <ul class="list-disc text-4xl flex gap-8 text-slate-300 -translate-y-12">
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
+            </div>
+        </div>
 
     </main>
 

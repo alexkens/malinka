@@ -6,23 +6,29 @@ $.when( $.ready ).then(async function() {
     const response = await fetch(url);
     const content = await response.json();
 
-    // footer
-    const number = content["contact"]["number"];
-    const email = content["contact"]["email"];
-    const facebookLink = content["contact"]["facebook-link"];
-    $( "#footer-tel" ).text(number);
-    $( "#footer-email" ).text(email);
-    $( '#facebook-link' ).prop("href", facebookLink);
+    // load header
+    $( "#header" ).load("partials/header.html");
+
+    // load footer
+    $( "#footer" ).load("partials/footer.html", function() {
+        const number = content["contact"]["number"];
+        const email = content["contact"]["email"];
+        const facebookLink = content["contact"]["facebook-link"];
+
+        $( "#footer-tel" ).text(number);
+        $( "#footer-email" ).text(email);
+        $( '#facebook-link' ).prop("href", facebookLink);
+    });
 });
 
 // header
-$("#sidebar-toggle").on("click", function() {
+$(document).on("click", '#sidebar-toggle', function() {
 
     let aside = $( "#aside aside" );
     
     if(aside.length == 0) {
 
-        $( "#aside" ).load("aside.html");
+        $( "#aside" ).load("partials/aside.html");
 
     } else {
 

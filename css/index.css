@@ -19,4 +19,24 @@
     --font-avenir: 'avenir';
     --font-futura: 'futura';
     --font-helvetica: 'helvetica';
+
+    --animate-fadeinL: 'fadeinL' 2s;
+    --animate-fadeinR: 'fadeinR' 2s;
+    --animate--blur: 'blur' 2s;
 }
+
+@keyframes fadeinL {
+  0% { transform: translateX(-50px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fadeinR {
+  0% { transform: translateX(+50px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes blur {
+  0% { filter: blur(8px ); }
+  100% { filter: blur(0px); }
+}
+

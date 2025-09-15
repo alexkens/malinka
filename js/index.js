@@ -8,7 +8,8 @@ $.when( $.ready ).then(async function() {
 
     // hero
     const firstImg =  "media/img/hero.png";
-    $( "#hero-carousel img" ).prop("src", firstImg);
+    $( "#hero-carousel" ).prop("src", firstImg);
+    $( "#hero-carousel" ).css("animation", "fadein 3s");
 
     // member
     const memberName = content["profiles"]["0"]["name"];
@@ -44,33 +45,46 @@ $("#sidebar-toggle").on("click", function() {
 
 // hero carousel
 const imgList = [
-    "img0.jpg",
-    "img1.jpg",
-    "img2.jpg",
+    "hero.png",
     "img3.jpg",
-    "img4.jpg",
     "img5.jpg",
     "img6.jpg",
-    "img7.jpg",
     "img8.jpg",
 ];
-var index = 0;
+var index = 1;
 
-function heroCarouselRight() {
+function heroCarousel(index, add) {
 
-    $( "#hero-carousel img" ).prop("src", `media/img/${imgList[index]}`);
-    if(index + 1 == imgList.length) {
+    if(index > imgList.length-1) {
         index = 0;
-    } else {
-        index++;
     }
-}
-function heroCarouselLeft() {
+    if(index < 0) {
+        index = imgList.length-1;
+    }
 
-    $( "#hero-carousel img" ).prop("src", `media/img/${imgList[index]}`);
-    if(index - 1 == -1) {
-        index = imgList.length - 1;
-    } {
-        index--;
+    $hero = $( "#hero-wrapper" );
+    $heroCarousel = $( "#hero-carousel" );
+    $heroCarousel.prop("src", `media/img/${imgList[index]}`);
+    
+    $heroCarousel.css("animation", "none");
+    $hero.css("animation", "none");
+    const offsetWidth = $heroCarousel[0].offsetWidth; // force reflow
+
+    if(add == 1) {
+        $heroCarousel.css("animation", "fadeinL 2s");
+        $hero.css("animation", "blur 1.5s");
+    } else {
+        $heroCarousel.css("animation", "fadeinR 2s");
+        $hero.css("animation", "blur 1.5s");
     }
+
+    return index + add;
+}
+
+function heroCarouselR() {
+    index = heroCarousel(index, 1);
+}
+
+function heroCarouselL() {
+    index = heroCarousel(index, -1);
 }

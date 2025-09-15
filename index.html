@@ -20,7 +20,7 @@
         </div>
 
         <button id="sidebar-toggle">
-            <img class="w-8" src="media/svg/hamburger-menu-svgrepo-com.svg">
+            <img class="hover:bg-slate-300 w-12" src="media/svg/hamburger-menu-svgrepo-com.svg">
         </button>
 
         <nav class="gap-6 hidden">
@@ -32,28 +32,28 @@
             </ul>
         </nav>
 
-        <div class="flex flex-col p-2 bg-slate-200 font-avenir">
+        <div class="flex flex-col p-2 bg-slate-400 font-avenir">
             <a class="hover:text-white active:opacity-50" href="" id="lang">En</a>
-            <a class="hover:text-white active:opacity-50" href="" id="mode">Darkmode</a>
+            <a class="hover:text-white active:opacity-50" href="" id="mode">Dark</a>
         </div>
 
     </header>
 
-    <div id="aside" class="bg-slate-300 flex justify-center items-center font-avenir"></div>
+    <div id="aside" class="bg-slate-400 flex justify-center items-center font-avenir"></div>
 
     <main>
 
         <div id="hero" class="bg-slate-300 w-full h-80 flex items-center justify-center gap-5">
 
-            <a onclick="heroCarouselLeft()">
-                <img class="w-10" src="media/svg/arrows-long-left-svgrepo-com.svg">
-            </a>
-            <div id="hero-carousel" class="carousel">
-                <img class="h-80" src="">
+            <button onclick="heroCarouselL()">
+                <img class="w-10 hover:bg-slate-500" src="media/svg/arrows-long-left-svgrepo-com.svg">
+            </button>
+            <div id="hero-wrapper">
+                <img id="hero-carousel" class="h-50 w-100" src="">
             </div>
-            <a onclick="heroCarouselRight()">
-                <img class="w-10" src="media/svg/arrows-long-right-svgrepo-com.svg">
-            </a>
+            <button onclick="heroCarouselR()">
+                <img class="w-10 hover:bg-slate-500" src="media/svg/arrows-long-right-svgrepo-com.svg">
+            </button>
 
         </div>
 

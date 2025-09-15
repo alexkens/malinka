@@ -239,8 +239,17 @@
   .h-50 {
     height: calc(var(--spacing) * 50);
   }
+  .h-65 {
+    height: calc(var(--spacing) * 65);
+  }
+  .h-70 {
+    height: calc(var(--spacing) * 70);
+  }
   .h-80 {
     height: calc(var(--spacing) * 80);
+  }
+  .h-90 {
+    height: calc(var(--spacing) * 90);
   }
   .h-100 {
     height: calc(var(--spacing) * 100);
@@ -259,6 +268,9 @@
   }
   .h-\[80\%\] {
     height: 80%;
+  }
+  .h-\[90\%\] {
+    height: 90%;
   }
   .h-full {
     height: 100%;
@@ -292,6 +304,12 @@
   }
   .w-100 {
     width: calc(var(--spacing) * 100);
+  }
+  .w-110 {
+    width: calc(var(--spacing) * 110);
+  }
+  .w-120 {
+    width: calc(var(--spacing) * 120);
   }
   .w-\[80\%\] {
     width: 80%;

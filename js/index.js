@@ -11,6 +11,9 @@ $.when( $.ready ).then(async function() {
     $( "#hero-carousel" ).prop("src", firstImg);
     $( "#hero-carousel" ).css("animation", "fadein 3s");
 
+    // hero carousel
+    heroCarouselTrigger();
+
     // member
     const memberName = content["profiles"]["0"]["name"];
     const memberInstrument = content["profiles"]["0"]["instrument"];
@@ -78,10 +81,10 @@ function heroCarousel(index, add) {
     const offsetWidth = $heroCarousel[0].offsetWidth; // force reflow
 
     if(add == 1) {
-        $heroCarousel.css("animation", "fadeinL 2s");
+        $heroCarousel.css("animation", "fadeinR 2s");
         $hero.css("animation", "blur 1.5s");
     } else {
-        $heroCarousel.css("animation", "fadeinR 2s");
+        $heroCarousel.css("animation", "fadeinL 2s");
         $hero.css("animation", "blur 1.5s");
     }
 
@@ -94,4 +97,19 @@ function heroCarouselR() {
 
 function heroCarouselL() {
     index = heroCarousel(index, -1);
+}
+
+// actual carousel functionality
+function heroCarouselTrigger() {
+    setInterval(heroCarouselR, 8000);
+}
+
+// member
+function memberCarousel() {
+    const list = [
+        "tatjana.jpg",
+        "vadim.jpg",
+        "larissa.jpg",
+        "marek.jpg",
+    ];
 }

@@ -14,17 +14,20 @@
         "1": {
             "name": "Vadim Borovinski",
             "instrument": "Gitarre",
-            "bio": "Vadim wurde 1956 in Tscheljabinsk, Russland, geboren und studierte am Polytechnischen Institut seiner Heimatstadt, wo er 1976 seinen Abschluss machte. Danach zog er nach Leningrad (heute St. Petersburg) und im Jahr 1990 emigrierte er nach Deutschland. In Berlin erlernte er das Gitarrenspiel bei Alexander Tschehov und Wolfgang Knotek und bildete sich auf Saxophon, Klarinette und Bassklarinette bei Alexander Vinokurov weiter. Seitdem hat er in verschiedenen Orchestern und Musikgruppen mitgewirkt und trat 2018 der 'Malinka Band' als Gitarrist bei."
+            "bio": "Vadim wurde 1956 in Tscheljabinsk, Russland, geboren und studierte am Polytechnischen Institut seiner Heimatstadt, wo er 1976 seinen Abschluss machte. Danach zog er nach Leningrad (heute St. Petersburg) und im Jahr 1990 emigrierte er nach Deutschland. In Berlin erlernte er das Gitarrenspiel bei Alexander Tschehov und Wolfgang Knotek und bildete sich auf Saxophon, Klarinette und Bassklarinette bei Alexander Vinokurov weiter. Seitdem hat er in verschiedenen Orchestern und Musikgruppen mitgewirkt und trat 2018 der 'Malinka Band' als Gitarrist bei.",
+            "img": "media/img/vadim.jpeg"
         },
         "2": {
             "name": "Larissa Onusajtene-Graf",
             "instrument": "Geige/ Arrangements",
-            "bio": "Larissa Onusajtene-Graf, in Iwano-Frankiwsk, Ukraine, geboren, studierte Violine und Klavier. Sie unterrichtete, spielte in Orchestern und im Trio 'Anachnu' in diversen Festivals. 2005 veröffentlichte sie ihr Album  'Amber Violin' und nach Stationen in Polen und England lebt sie seit 2007 in Deutschland. Mit einem Repertoire von 200 Genres reist sie weltweit mit ihrer Geige, unterrichtet und macht Straßenmusik, vor allem klassische Musik von  Bach und Vivaldi liegt ihr zu Herzen. Seit 2019 spielt sie in der 'Malinka Band' und hat Interesse an Vedischen Wissen, alten Zivilisationen und Handarbeiten."
+            "bio": "Larissa Onusajtene-Graf, in Iwano-Frankiwsk, Ukraine, geboren, studierte Violine und Klavier. Sie unterrichtete, spielte in Orchestern und im Trio 'Anachnu' in diversen Festivals. 2005 veröffentlichte sie ihr Album  'Amber Violin' und nach Stationen in Polen und England lebt sie seit 2007 in Deutschland. Mit einem Repertoire von 200 Genres reist sie weltweit mit ihrer Geige, unterrichtet und macht Straßenmusik, vor allem klassische Musik von  Bach und Vivaldi liegt ihr zu Herzen. Seit 2019 spielt sie in der 'Malinka Band' und hat Interesse an Vedischen Wissen, alten Zivilisationen und Handarbeiten.",
+            "img": "media/img/larissa.jpg"
         },
         "3": {
             "name": "Pan Marek",
             "instrument": "Zimbel/ Schlagzeug",
-            "bio": "Marek absolvierte eine spezielle Musikschule in Minsk mit dem Schwerpunkt auf Volksinstrumenten, insbesondere Zimbeln. Später besuchte er das Weißrussische Konservatorium, wo er sich in einer Meisterklasse für Zimbeln weiterbildete. Er war langjähriger Solist der Minsker Philharmonie, spielte in Jazzorchestern und Rock- sowie Popgruppen als Schlagzeuger, darunter Singing Guitars, Pesnyary und Syabry. Außerdem ist er als Arrangeur von Volksmusik bekannt. Seit 1990 lebt Herr Schmelkin in Deutschland und hat in verschiedenen Jazz-, Rock- und Klezmerbands gearbeitet."
+            "bio": "Marek absolvierte eine spezielle Musikschule in Minsk mit dem Schwerpunkt auf Volksinstrumenten, insbesondere Zimbeln. Später besuchte er das Weißrussische Konservatorium, wo er sich in einer Meisterklasse für Zimbeln weiterbildete. Er war langjähriger Solist der Minsker Philharmonie, spielte in Jazzorchestern und Rock- sowie Popgruppen als Schlagzeuger, darunter Singing Guitars, Pesnyary und Syabry. Außerdem ist er als Arrangeur von Volksmusik bekannt. Seit 1990 lebt Herr Schmelkin in Deutschland und hat in verschiedenen Jazz-, Rock- und Klezmerbands gearbeitet.",
+            "img": "media/img/marek.jpg"
         }
     },
     "gigs": {

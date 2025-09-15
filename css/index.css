@@ -23,6 +23,7 @@
     --animate-fadeinL: 'fadeinL' 2s;
     --animate-fadeinR: 'fadeinR' 2s;
     --animate--blur: 'blur' 2s;
+    --animate-opacityFade: 'opacityFade' 2s;
 }
 
 @keyframes fadeinL {
@@ -40,3 +41,7 @@
   100% { filter: blur(0px); }
 }
 
+@keyframes opacityFade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

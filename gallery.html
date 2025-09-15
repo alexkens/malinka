@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Malinka Band</title>
+    <link rel="icon" type="image/x-icon" href="media/logo/iconLogo.ico">
+    <link rel="stylesheet" href="css/dist_index.css">
+    <script src="node_modules/jquery/dist/jquery.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="js/general_settings.js" defer></script>
+</head>
+<body>
+
+    <header class="flex justify-between items-center gap-6">
+
+        <div id="logo">
+            <a href="index.html">
+                <img src="media/logo/MALINKA logo 149x59.png">
+            </a>
+        </div>
+
+        <button id="sidebar-toggle">
+            <img class="hover:bg-slate-300 w-12" src="media/svg/hamburger-menu-svgrepo-com.svg">
+        </button>
+
+        <nav class="gap-6 hidden">
+            <ul class="flex items-center gap-5">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallerie</a></li>
+                <li><a href="appointments.html">Termine</a></li>
+                <li><a href="contact.html">Buchen</a></li>
+            </ul>
+        </nav>
+
+        <div class="flex flex-col p-2 bg-slate-400 text-white font-avenir">
+            <a class="hover:text-white active:opacity-50" href="" id="lang">En</a>
+            <a class="hover:text-white active:opacity-50" href="" id="mode">Dark</a>
+        </div>
+
+    </header>
+
+    <div id="aside" class="bg-slate-400 flex justify-center items-center font-avenir"></div>
+    
+</body>
+</html>

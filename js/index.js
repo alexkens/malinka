@@ -25,32 +25,8 @@ $.when( $.ready ).then(async function() {
     $( ".member-text" ).text(memberBio);
     $( ".member-img" ).prop("src", memberImg);
 
-    // footer
-    const number = content["contact"]["number"];
-    const email = content["contact"]["email"];
-    const facebookLink = content["contact"]["facebook-link"];
-    $( "#footer-tel" ).text(number);
-    $( "#footer-email" ).text(email);
-    $( '#facebook-link' ).prop("href", facebookLink);
-});
-
-// header
-$("#sidebar-toggle").on("click", function() {
-
-    let aside = $( "#aside aside" );
-    
-    if(aside.length == 0) {
-
-        $( "#aside" ).load("aside.html");
-
-    } else {
-
-        if(aside.css("display") === "none") {
-            aside.css("display", "block");
-        } else { // display != none
-            aside.css("display", "none");
-        }
-    }
+    // member carousel
+    memberCarouselTrigger(content);
 });
 
 // hero carousel
@@ -104,12 +80,30 @@ function heroCarouselTrigger() {
     setInterval(heroCarouselR, 8000);
 }
 
-// member
-function memberCarousel() {
-    const list = [
-        "tatjana.jpg",
-        "vadim.jpg",
-        "larissa.jpg",
-        "marek.jpg",
-    ];
+// member carousel functionality
+function memberCarouselTrigger(content) {
+    var memberIndex = 0;
+    setInterval(() => {
+        memberIndex = memberCarousel(memberIndex, content);
+    }, 6000);
+}
+
+function memberCarousel(memberIndex, content) {
+    memberIndex++;
+    if(memberIndex >= 4) {
+        memberIndex = 0
+    }
+    const memberName = content["profiles"][memberIndex]["name"];
+    const memberInstrument = content["profiles"][memberIndex]["instrument"];
+    const memberBio = content["profiles"][memberIndex]["bio"];
+    const memberImg = content["profiles"][memberIndex]["img"];
+
+    $( ".member-name" ).text(memberName);
+    $( ".member-instrument" ).text(memberInstrument);
+    $( ".member-text" ).text(memberBio);
+    $( ".member-img" ).prop("src", memberImg);
+
+    $( `.${memberIndex}` ).addClass("text-white");
+
+    return memberIndex;
 }

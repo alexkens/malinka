@@ -32,7 +32,7 @@
             </ul>
         </nav>
 
-        <div class="flex flex-col p-2 bg-slate-400 font-avenir">
+        <div class="flex flex-col p-2 bg-slate-400 text-white font-avenir">
             <a class="hover:text-white active:opacity-50" href="" id="lang">En</a>
             <a class="hover:text-white active:opacity-50" href="" id="mode">Dark</a>
         </div>
@@ -49,7 +49,7 @@
                 <img class="w-10 hover:bg-slate-500" src="media/svg/arrows-long-left-svgrepo-com.svg">
             </button>
             <div id="hero-wrapper">
-                <img id="hero-carousel" class="h-50 w-100" src="">
+                <img id="hero-carousel" class="h-50 w-100 shadow-md" src="">
             </div>
             <button onclick="heroCarouselR()">
                 <img class="w-10 hover:bg-slate-500" src="media/svg/arrows-long-right-svgrepo-com.svg">
@@ -59,7 +59,7 @@
 
         <div id="profile" class="profile flex flex-col justify-center items-center p-5 gap-5">
 
-            <div class="flex items-center gap-2 text-5xl font-futura">
+            <div class="flex items-center gap-2 text-5xl font-futura text-shadow-md">
                 <h1>The</h1>
                 <img class="" src="media/logo/MALINKA logo 244x97.png">
                 <h1>Band</h1>
@@ -69,7 +69,7 @@
 
                 <a href="contact.html">
                     <button class="flex justify-evenly items-center gap-2 bg-slate-500 w-30 h-10 text-white font-avenir shadow-md">
-                        <img class="w-5" src="media/svg/arrows-long-right-svgrepo-com.svg">
+                        <img class="w-5" src="media/svg/arrows-long-right.svg">
                         <p>Kontakt</p>
                     </button>
                 </a>
@@ -109,7 +109,7 @@
                 <img class="member-img h-full" src="">
             </div>
             <div class="">
-                <ul class="list-disc text-4xl flex gap-8 text-slate-300 -translate-y-12">
+                <ul class="bg-slate-300 w-full list-disc text-4xl flex gap-8 text-slate-700">
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
@@ -121,11 +121,25 @@
     </main>
 
     <footer>
-        <div class="head-footer">
-            <div class="imprint"></div>
-            <div class="contact-form"></div>
+        <div class="grid grid-cols-2 gap-6 head-footer bg-white h-80">
+            <div class="imprint bg-slate-300 flex flex-col items-end gap-2 py-8 px-4 text-white text-shadow-md">
+                <h2 class="text-2xl mb-2">Bleiben wir in Kontakt!</h2>
+                <a id="footer-tel" href="tel:+1234567890"></a>
+                <a id="footer-email"></a>
+                <a id="facebook-link" class="w-10" href=""><img src="media/svg/facebook-svgrepo-com.svg"></a>
+            </div>
+
+            <div class="contact-form">
+                <form>
+                    <h2>form</h2>
+                    <input>
+                </form>
+            </div>
         </div>
-        <div class="tail-footer"></div>
+        <div class="tail-footer flex flex-col justify-center items-center">
+            <img src="media/logo/MALINKA logo 149x59.png">
+            <p>&#169; 2025</p>
+        </div>
     </footer>
     
 </body>

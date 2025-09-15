@@ -22,6 +22,13 @@ $.when( $.ready ).then(async function() {
     $( ".member-text" ).text(memberBio);
     $( ".member-img" ).prop("src", memberImg);
 
+    // footer
+    const number = content["contact"]["number"];
+    const email = content["contact"]["email"];
+    const facebookLink = content["contact"]["facebook-link"];
+    $( "#footer-tel" ).text(number);
+    $( "#footer-email" ).text(email);
+    $( '#facebook-link' ).prop("href", facebookLink);
 });
 
 // header

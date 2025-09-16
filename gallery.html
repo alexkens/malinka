@@ -9,6 +9,7 @@
     <script src="node_modules/jquery/dist/jquery.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="js/general_settings.js" defer></script>
+    <script src="js/gallery.js" defer></script>
 </head>
 <body>
 
@@ -18,29 +19,11 @@
 
         <h2 class="bg-slate-300 w-full text-centers flex justify-center text-4xl p-8 font-avenir text-white text-shadow-md">Videoauftritte</h2>
 
-        <div class="video flex flex-col items-center gap-8">
-            
-            <div class="bg-white">
-                <video class="w-130 shadow-md rounded-2xl" src="media/video/file_1.mp4" controls autoplay muted></video>
-            </div>
-            
-            <div class="bg-slate-300 w-full">
-                <video class="w-130 shadow-md rounded-2xl" src="media/video/file_2.mp4" controls muted></video>
-            </div>
+        <div class="video-container flex flex-col items-center gap-8 my-4 w-full"></div>
 
-        </div>
+        <h2 class="bg-slate-300 w-full text-center text-4xl p-8 font-avenir text-white text-shadow-md">Bildergalerie</h2>
 
-        <div class="h-px w-[80%] bg-black"></div>
-
-        <h2 class="text-4xl p-8 font-avenir text-white text-shadow-md">Bildergalerie</h2>
-
-        <div class="img grid">
-
-            <div class="bg-slate-300 px-18 py-2">
-                <img class="w-130 shadow-md rounded-2xl" src="media/img/img0.jpg" alt="">
-            </div>
-
-        </div>
+        <div class="img-container grid grid-cols-3 gap-3 pt-2 pb-8 mx-6"></div>
 
     </main>
 

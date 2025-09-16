@@ -203,6 +203,9 @@
   .left-14 {
     left: calc(var(--spacing) * 14);
   }
+  .m-2 {
+    margin: calc(var(--spacing) * 2);
+  }
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
   }

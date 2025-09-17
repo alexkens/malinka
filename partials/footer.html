@@ -1,6 +1,7 @@
 <footer>
-    <div class="grid grid-cols-2 gap-6 head-footer bg-white h-80">
-        <div class="imprint bg-slate-300 flex flex-col items-end gap-2 py-8 px-4 text-white text-shadow-md">
+    <div class="grid grid-cols-2 head-footer bg-white">
+        
+        <div class="imprint bg-slate-300 flex flex-col items-end gap-2 py-8 px-4 text-white text-shadow-md font-avenir">
             <h2 class="text-2xl mb-2">Bleiben wir in Kontakt!</h2>
             <a class="hover:opacity-30 active:bg-black" id="footer-tel" href="tel:+1234567890"></a>
             <a id="footer-email"></a>
@@ -8,9 +9,34 @@
         </div>
 
         <div class="contact-form">
-            <form>
-                <h2>form</h2>
-                <input>
+
+            <div class="bg-slate-300 w-full h-10"></div>
+
+            <form class="flex flex-col justify-center gap-4 w-70 py-4 px-6 font-avenir">
+
+                <div>
+                    <label for="name">Name</label>
+                    <input class="border w-full" type="text" name="name" id="name">
+                </div>
+
+                <div class="">
+                    <label for="email">Email*</label>
+                    <input class="border w-full" type="text" name="email" id="email" required>
+                </div>
+
+                <div>
+                    <label for="tel">Telefonnummer*</label>
+                    <input class="border w-full" type="text" name="tel" id="tel" required>
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="message">Nachricht</label>
+                    <textarea class="border w-full" name="message" id="message"></textarea>
+                </div>
+
+                <div class="">
+                    <button class="bg-slate-500 w-full text-white shadow-md h-10">Absenden</button>
+                </div>
             </form>
         </div>
     </div>

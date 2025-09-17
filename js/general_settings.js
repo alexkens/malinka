@@ -19,6 +19,9 @@ $.when( $.ready ).then(async function() {
         $( "#footer-email" ).text(email);
         $( '#facebook-link' ).prop("href", facebookLink);
     });
+
+    // footer contact form
+    contactForm();
 });
 
 // header
@@ -39,3 +42,12 @@ $(document).on("click", '#sidebar-toggle', function() {
         }
     }
 });
+
+
+function contactForm() {
+    const form = $( "footer div input" );
+
+    form.on('click', () => {
+        
+    });
+}

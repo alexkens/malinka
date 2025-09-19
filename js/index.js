@@ -22,10 +22,13 @@ $.when( $.ready ).then(async function() {
     $( "#hero-carousel" ).prop("src", firstImg);
     $( "#hero-carousel" ).css("animation", "fadein 3s");
 
+
     heroCarouselTrigger();
 
-    memberCarouselInit(content);
-    memberCarouselTrigger(content);
+    listItemClickListener(content);
+    initMember(content);
+    automatic(content);
+    stopMemberCarousel();
 });
 
 // hero carousel
@@ -80,24 +83,36 @@ function heroCarouselTrigger() {
     setInterval(heroCarouselR, 8000);
 }
 
+function CarouselClickListener(carouselId){
+    $( carouselId ).on("click", function() {
+        clearInterval(intervalId);
+        intervalId = null;
+    });
+}
+
 
 // ----------------new member carousel ----------------------------
 var state = {
-    currIndex: 0,
+    currIndex: -1,
     prevIndex: -1,
-    intervalId: 0,
+    intervalId: null,
 };
 
-function findState() {
-    const ul = $( "#member-carousel" );
-
-    // if()
-}
-
-function carouselStep(content, automatic=false) {
-    // update state
-    state.prevIndex = state.currIndex;
-    state.currIndex = index;
+function carouselStep(content, automatic=false, newIndex=null) {
+    
+    if(automatic) {
+        state.prevIndex = state.currIndex;
+        if(state.currIndex == 3 || state.currIndex > 3 || state.currIndex < 0) {
+            state.currIndex = 0;
+        } else {
+            state.currIndex++;
+        }
+    } else {
+        if(newIndex != null && newIndex >= 0 && newIndex <= 3) {
+            state.prevIndex = state.currIndex;
+            state.currIndex = newIndex;
+        }
+    }
 
     const memberName = content["profiles"][state.currIndex]["name"];
     const memberInstrument = content["profiles"][state.currIndex]["instrument"];
@@ -115,113 +130,45 @@ function carouselStep(content, automatic=false) {
     if(state.prevIndex != -1) {
         $( `#member-carousel .${state.prevIndex}` ).removeClass("text-white");
     }
+}
 
-    if(automatic) {
-        state.prevIndex = state.currIndex;
-        if(state.currIndex == 3) {
-            state.currIndex = 0;
-        } else {
-            state.currIndex++;
-        }
-    }
+function initMember(content) {
+    carouselStep(content, true);
 }
 
 function automatic(content) {
-    intervalId ??= setInterval(() => {
+
+    state.intervalId ??= setInterval(() => {
          carouselStep(content, true);
-    }, 5000);
+    }, 6000);
 }
 
-function arrowR(content) {
-    $( ".member-arrowR" ).on("click", function() {
-        // stop carousel
-        clearInterval(intervalId);
-        intervalId = null;
+async function memberArrow(add) {
+    const content = await getJSON();
 
-        // go one step into right direction
-        carouselStep(content, );
-    });
-}
+    // stop carousel
+    clearInterval(state.intervalId);
+    state.intervalId = null;
 
-
-
-
-
-
-
-
-
-
-// ----------------new member carousel ----------------------------
-
-
-
-
-
-
-// member carousel init
-function memberCarouselInit(content) {
-
-    const memberName = content["profiles"][0]["name"];
-    const memberInstrument = content["profiles"][0]["instrument"];
-    const memberBio = content["profiles"][0]["bio"];
-    const memberImg = content["profiles"][0]["img"];
-
-    $( ".member-name" ).text(memberName);
-    $( ".member-instrument" ).text(memberInstrument);
-    $( ".member-text" ).text(memberBio);
-    $( ".member-img" ).prop("src", memberImg);
-
-    changeElement(".members-inner", "opac");
-
-    $( `#member-carousel .${0}` ).addClass("text-white");
-}
-
-// member carousel functionality
-let intervalId;
-function memberCarouselTrigger(content) {
-
-    CarouselClickListener("#members");
-    arrowRClickListener(content);
-
-    var memberIndex = 0;
-    intervalId ??= setInterval(() => {
-        memberIndex = memberCarousel(memberIndex, content);
-    }, 5000);
-}
-
-function arrowRClickListener(content) {
-    $( ".member-arrowR" ).on("click", function() {
-        clearInterval(intervalId);
-        intervalId = null;
-        memberCarousel(memberIndex, content);
-    });
-}
-
-function memberCarousel(memberIndex, content) {
-
-    let previousIndex = memberIndex;
-    memberIndex++;
-    if(memberIndex > 3) {
-        memberIndex = 0;
+    // get new index
+    if(state.currIndex + add > 3) {
+        carouselStep(content, false, 0);
+    } else if(state.currIndex + add < 0) {
+        carouselStep(content, false, 3);
+    } else {
+        carouselStep(content, false, state.currIndex + add);
     }
+}
 
-    const memberName = content["profiles"][memberIndex]["name"];
-    const memberInstrument = content["profiles"][memberIndex]["instrument"];
-    const memberBio = content["profiles"][memberIndex]["bio"];
-    const memberImg = content["profiles"][memberIndex]["img"];
+function listItemClickListener(content) {
+    $( "#member-carousel li" ).on("click", function() {
+        // stop carousel
+        clearInterval(state.intervalId);
+        state.intervalId = null;
 
-    $( ".member-name" ).text(memberName);
-    $( ".member-instrument" ).text(memberInstrument);
-    $( ".member-text" ).text(memberBio);
-    $( ".member-img" ).prop("src", memberImg);
-
-    changeElement(".members-inner", "opac");
-
-    $( `#member-carousel .${memberIndex}` ).addClass("text-white");
-    $( `#member-carousel .${previousIndex}` ).removeClass("text-white");
-
-    return memberIndex;
+        // go the step
+        carouselStep(content, false, parseInt(this.className));
+    });
 }
 
 function changeElement(id, animation) {
@@ -231,9 +178,9 @@ function changeElement(id, animation) {
     wrapper.addClass(animation);
 }
 
-function CarouselClickListener(carouselId){
-    $( carouselId ).on("click", function() {
-        clearInterval(intervalId);
-        intervalId = null;
+function stopMemberCarousel(){
+    $( "#members" ).on("click", function() {
+        clearInterval(state.intervalId);
+        state.intervalId = null;
     });
 }

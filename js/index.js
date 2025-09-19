@@ -137,7 +137,6 @@ function initMember(content) {
 }
 
 function automatic(content) {
-
     state.intervalId ??= setInterval(() => {
          carouselStep(content, true);
     }, 6000);

@@ -37,10 +37,23 @@ $.when( $.ready ).then(async function() {
 
     for(let index in imgList) {
         const src = `media/img/${imgList[index]}`;
-        const v = `<div class="">
+        const v = `<div class="img hover:opacity-75">
                         <img class="w-130 shadow-md rounded-lg" src=${src} alt="">
                     </div>`;
         img.append(v);
     }
 
+    zoomViewListener();
 });
+
+function zoomViewListener() {
+    $( ".img-container .img img" ).on("click", function() {
+        const src = $(this).attr("src");
+
+        const zoom = `<div class="overlay relative bg-black/60 w-full z-1 flex justify-center items-center"><img class="h-100" src=${src}></div>`;
+        const main = $( "main" );
+        main.append(zoom);
+        // $(":root").addClass("saturate-20");
+        
+    });
+}

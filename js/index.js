@@ -104,11 +104,20 @@ let intervalId;
 function memberCarouselTrigger(content) {
 
     CarouselClickListener("#members");
+    arrowRClickListener(content);
 
     var memberIndex = 0;
     intervalId ??= setInterval(() => {
         memberIndex = memberCarousel(memberIndex, content);
     }, 5000);
+}
+
+function arrowRClickListener(content) {
+    $( ".member-arrowR" ).on("click", function() {
+        clearInterval(intervalId);
+        intervalId = null;
+        memberIndex = memberCarousel(memberIndex, content);
+    });
 }
 
 function memberCarousel(memberIndex, content) {
@@ -118,12 +127,6 @@ function memberCarousel(memberIndex, content) {
     if(memberIndex > 3) {
         memberIndex = 0;
     }
-
-    $( ".member-arrowR" ).on("click", function() {
-        clearInterval(intervalId);
-        intervalId = null;
-        memberIndex = memberCarousel(memberIndex, content);
-    });
 
     const memberName = content["profiles"][memberIndex]["name"];
     const memberInstrument = content["profiles"][memberIndex]["instrument"];

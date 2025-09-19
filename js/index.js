@@ -80,6 +80,85 @@ function heroCarouselTrigger() {
     setInterval(heroCarouselR, 8000);
 }
 
+
+// ----------------new member carousel ----------------------------
+var state = {
+    currIndex: 0,
+    prevIndex: -1,
+    intervalId: 0,
+};
+
+function findState() {
+    const ul = $( "#member-carousel" );
+
+    // if()
+}
+
+function carouselStep(content, automatic=false) {
+    // update state
+    state.prevIndex = state.currIndex;
+    state.currIndex = index;
+
+    const memberName = content["profiles"][state.currIndex]["name"];
+    const memberInstrument = content["profiles"][state.currIndex]["instrument"];
+    const memberBio = content["profiles"][state.currIndex]["bio"];
+    const memberImg = content["profiles"][state.currIndex]["img"];
+
+    $( ".member-name" ).text(memberName);
+    $( ".member-instrument" ).text(memberInstrument);
+    $( ".member-text" ).text(memberBio);
+    $( ".member-img" ).prop("src", memberImg);
+
+    changeElement(".members-inner", "opac");
+
+    $( `#member-carousel .${state.currIndex}` ).addClass("text-white");
+    if(state.prevIndex != -1) {
+        $( `#member-carousel .${state.prevIndex}` ).removeClass("text-white");
+    }
+
+    if(automatic) {
+        state.prevIndex = state.currIndex;
+        if(state.currIndex == 3) {
+            state.currIndex = 0;
+        } else {
+            state.currIndex++;
+        }
+    }
+}
+
+function automatic(content) {
+    intervalId ??= setInterval(() => {
+         carouselStep(content, true);
+    }, 5000);
+}
+
+function arrowR(content) {
+    $( ".member-arrowR" ).on("click", function() {
+        // stop carousel
+        clearInterval(intervalId);
+        intervalId = null;
+
+        // go one step into right direction
+        carouselStep(content, );
+    });
+}
+
+
+
+
+
+
+
+
+
+
+// ----------------new member carousel ----------------------------
+
+
+
+
+
+
 // member carousel init
 function memberCarouselInit(content) {
 
@@ -95,8 +174,7 @@ function memberCarouselInit(content) {
 
     changeElement(".members-inner", "opac");
 
-    $( `#member-carousel .${memberIndex}` ).addClass("text-white");
-    $( `#member-carousel .${previousIndex}` ).removeClass("text-white");
+    $( `#member-carousel .${0}` ).addClass("text-white");
 }
 
 // member carousel functionality
@@ -116,7 +194,7 @@ function arrowRClickListener(content) {
     $( ".member-arrowR" ).on("click", function() {
         clearInterval(intervalId);
         intervalId = null;
-        memberIndex = memberCarousel(memberIndex, content);
+        memberCarousel(memberIndex, content);
     });
 }
 

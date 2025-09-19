@@ -543,6 +543,9 @@
   opacity: 1;
   transition: opacity 2s ease-in-out;
 }
+#member-carousel li {
+  opacity: 1;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;

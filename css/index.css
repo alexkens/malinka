@@ -46,11 +46,11 @@
   100% { opacity: 1; }
 }
 
-.members-wrapper {
+.members-inner {
   opacity: 0;
 }
 
-.members-wrapper.opac {
+.members-inner.opac {
   opacity: 1;
-  transition: opacity 3s ease-in-out;
+  transition: opacity 2s ease-in-out;
 }

@@ -3,13 +3,9 @@ $.when( $.ready ).then(async function() {
     const url = window.jsonURL;
     const response = await fetch(url);
     const content = await response.json();
-
     const gigs = ["current", "archive"];
+
     for(let key in gigs) {
-
-        console.log(key);
-        console.log(gigs[key]);
-
         const contentJSON = content["gigs"][gigs[key]];
         const contentARRAY = [];
         for(const k in contentJSON) {

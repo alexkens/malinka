@@ -2,6 +2,11 @@ window.jsonURL = "./media/contentDe.json";
 
 // on load
 $.when( $.ready ).then(async function() {
+    // mode
+    if(localStorage.getItem("theme") === "dark") {
+        $("html").addClass("dark");
+        $("#mode").text("Light");
+    }
 
     // content.json
     const url = window.jsonURL;
@@ -37,7 +42,7 @@ $(document).on("click", '#sidebar-toggle', function() {
     }
 });
 
-
+// change language
 $(document).on("click", "#lang", async function() {
     const lang = $(this).text();
     $(this).text(lang === "En" ? "De" : "En");
@@ -53,29 +58,23 @@ $(document).on("click", "#lang", async function() {
         $(this).text(value);
     });
 
+    // change json url, so member carousel (index.js) can change language too
     window.jsonURL = `./media/content${lang}.json`;
 });
 
+// darkmode
+$(document).on("click", "#mode", function() {
+    const html = $( "html" );
+    const isDark = html.hasClass("dark");
 
-/*
-
-function darkmode() {
-
-    const body = document.body;
-    const darkmodeButton = document.getElementById("darkmodeButton");
-
-    if(body.classList.contains("dark")){
-        body.classList.remove("dark");
-        darkmodeButton.innerHTML = "Darkmode";
-
-    } else {
-        body.classList.add("dark");
-        darkmodeButton.innerHTML = "Lightmode";
+    if(isDark) {
+        html.removeClass("dark");
+        $(this).text("Dark");
+        localStorage.setItem("theme", "light");
+        
+    } else { // !isDark
+        html.addClass("dark");
+        $(this).text("Light");
+        localStorage.setItem("theme", "dark");
     }
-}
-
-
-
-
-
-*/
+});

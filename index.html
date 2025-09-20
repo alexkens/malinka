@@ -14,13 +14,13 @@
 </head>
 <body>
 
-    <div id="header"></div>
+    <div id="header" class=""></div>
 
     <div id="aside" class="bg-slate-400 flex justify-center items-center font-avenir"></div>
 
     <main>
 
-        <div id="hero" class="bg-slate-300 w-full h-80 flex items-center justify-center gap-5">
+        <div id="hero" class="bg-slate-300 dark:!bg-slate-500 w-full h-80 flex items-center justify-center gap-5">
 
             <button onclick="heroCarouselL()">
                 <img class="w-10 hover:bg-slate-500 active:bg-slate-700" src="media/svg/arrows-long-left-svgrepo-com.svg">
@@ -34,22 +34,22 @@
 
         </div>
 
-        <div id="profile" class="profile flex flex-col justify-center items-center p-5 gap-5">
+        <div id="profile" class="profile flex flex-col justify-center items-center p-5 gap-5 dark:bg-slate-400 dark:text-white">
 
-            <div class="flex items-center gap-2 text-5xl font-futura text-shadow-md">
+            <div class="flex items-center gap-2 text-5xl font-futura text-shadow-md ">
                 <h1>The</h1>
-                <img class="" src="media/logo/MALINKA logo 244x97.png">
+                <img class="dark:brightness-75" src="media/logo/MALINKA logo 244x97.png">
                 <h1>Band</h1>
             </div>
 
             <p class="w-100 text-justify font-avenir pre">
                 <span data-i18n="band-text1">Falls Sie für Ihr Lokal oder Ihre Verstanstaltung ein Highlight brauchen, müssen Sie nicht mehr weiter suchen. Wir sind die</span>
-                <span class="text-red-500 font-black text-lg">Malinka</span>
+                <span class="text-red-500 font-black text-lg dark:!text-red-800">Malinka</span>
                 <span class="font-bold">Band</span><span data-i18n="band-text2">. Eine vielseitige Truppe von passionierten Musikern und Unterhaltungskünstlern aus Berlin. Unsere Wurzeln sind vertraut und doch geheimnisvoll. Und so bringen wir Klang und Kultur aus dem Kreise Deutschland, Ukraine und Polen.</span>
             </p>
 
-            <h2 class="text-2xl text-red-500 font-bold text-center font-avenir text-shadow-md">Genres</h2>
-            <div class="font-avenir text-slate-600 text-lg font-semibold flex gap-4 text-shadow-md">
+            <h2 class="text-2xl text-red-500 font-bold text-center font-avenir text-shadow-md dark:!text-red-800">Genres</h2>
+            <div class="font-avenir text-slate-600 text-lg font-semibold flex gap-4 text-shadow-md dark:!text-white">
                 <h3>Klezmer</h3>
                 <h3 data-i18n="genre1">Ukrainische-</h3>
                 <h3 data-i18n="genre2">Polnische-</h3>
@@ -91,16 +91,16 @@
 
         </div>          
 
-        <div class="bg-slate-300 h-120 flex flex-col justify-center items-center ">
+        <div class="bg-slate-300 h-120 flex flex-col justify-center items-center dark:bg-slate-500">
 
-            <div id="members" class="bg-white w-[100%] h-[80%] flex items-center justify-center gap-8">
+            <div id="members" class="bg-white w-[100%] h-[80%] flex items-center justify-center gap-8 dark:!bg-slate-500">
 
                 <button onclick="memberArrow(-1)">
                     <img class="member-arrowL w-10 bg-slate-300 hover:bg-slate-500 active:bg-slate-700" src="media/svg/arrows-long-left-svgrepo-com.svg" alt="">
                 </button>
 
                 <div class="flex items-center justify-center gap-8 p-10 members-inner">
-                    <div class="w-80 flex flex-col gap-2">
+                    <div class="w-80 flex flex-col gap-2 dark:text-white">
                         <h2 class="member-name text-xl"></h2>
                         <p class="member-instrument"></p>
                         <div class="member-text text-sm text-justify"></div>

@@ -1,6 +1,6 @@
 $.when( $.ready ).then(async function() {
 
-    const url = "./media/content.json";
+    const url = window.jsonURL;
     const response = await fetch(url);
     const content = await response.json();
 

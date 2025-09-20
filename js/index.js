@@ -1,6 +1,6 @@
 // content.json
 async function getJSON() {
-    const url = "./media/content.json"
+    const url = window.jsonURL;
     try {
         const response = await fetch(url);
         if(!response.ok) {
@@ -26,8 +26,8 @@ $.when( $.ready ).then(async function() {
     heroCarouselTrigger();
 
     listItemClickListener(content);
-    initMember(content);
-    automatic(content);
+    initMember();
+    automatic();
     stopMemberCarousel();
 });
 
@@ -98,7 +98,9 @@ var state = {
     intervalId: null,
 };
 
-function carouselStep(content, automatic=false, newIndex=null) {
+async function carouselStep(automatic=false, newIndex=null) {
+
+    const content = await getJSON();
     
     if(automatic) {
         state.prevIndex = state.currIndex;
@@ -132,13 +134,13 @@ function carouselStep(content, automatic=false, newIndex=null) {
     }
 }
 
-function initMember(content) {
-    carouselStep(content, true);
+function initMember() {
+    carouselStep(true);
 }
 
-function automatic(content) {
+function automatic() {
     state.intervalId ??= setInterval(() => {
-         carouselStep(content, true);
+         carouselStep(true);
     }, 6000);
 }
 
@@ -151,11 +153,11 @@ async function memberArrow(add) {
 
     // get new index
     if(state.currIndex + add > 3) {
-        carouselStep(content, false, 0);
+        carouselStep(false, 0);
     } else if(state.currIndex + add < 0) {
-        carouselStep(content, false, 3);
+        carouselStep(false, 3);
     } else {
-        carouselStep(content, false, state.currIndex + add);
+        carouselStep(false, state.currIndex + add);
     }
 }
 
@@ -166,7 +168,7 @@ function listItemClickListener(content) {
         state.intervalId = null;
 
         // go the step
-        carouselStep(content, false, parseInt(this.className));
+        carouselStep(false, parseInt(this.className));
     });
 }
 

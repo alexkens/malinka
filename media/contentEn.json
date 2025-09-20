@@ -1,0 +1,86 @@
+{
+    "contact": {
+        "number": "+49 157 527 063 69",
+        "email": "band.malinka@gmail.com",
+        "facebook-link": "https://www.facebook.com/groups/2514941372155943"
+    },
+    "profiles": {
+        "0": {
+            "name": "Tatjana Malinka-Kruszynski",
+            "instrument": "Accordion / Vocals",
+            "bio": "Tatjana, born in Ukraine, graduated from the M. I. Glinka Music College in Dnepropetrovsk with a diploma as a music teacher for accordion and conductor of folk instrument orchestras. She continued her musical and pedagogical studies at Dragomanov University in Kyiv, Ukraine. She has lived in Germany since 1994, and music has accompanied her throughout her life, forming an important part of her existence. Tatjana is an active member of the group The Malinka Band as an accordionist and singer.",
+            "img": "media/img/tatjana.jpg"
+        },
+        "1": {
+            "name": "Vadim Borovinski",
+            "instrument": "Guitar",
+            "bio": "Vadim was born in Chelyabinsk, Russia, in 1956 and studied at the Polytechnic Institute in his hometown, graduating in 1976. He then moved to Leningrad (now St. Petersburg) and emigrated to Germany in 1990. In Berlin, he learned to play the guitar with Alexander Chekhov and Wolfgang Knotek and continued his training on the saxophone, clarinet, and bass clarinet with Alexander Vinokurov. Since then, he has played in various orchestras and music groups and joined the Malinka Band as a guitarist in 2018.",
+            "img": "media/img/vadim.jpeg"
+        },
+        "2": {
+            "name": "Larissa Onusajtene-Graf",
+            "instrument": "Violin/ Arrangements",
+            "bio": "Larissa, born in Ivano-Frankivsk, Ukraine, studied violin and piano. She taught, played in orchestras and in the trio ‘Anachnu’ at various festivals. In 2005, she released her album ‘Amber Violin’ and, after living in Poland and England, she has been living in Germany since 2007. With a repertoire of 200 genres, she travels worldwide with her violin, teaches, and performs street music, with a particular love for classical music by Bach and Vivaldi. Since 2019, she has been playing in the Malinka Band and is interested in Vedic knowledge, ancient civilizations, and handicrafts.",
+            "img": "media/img/larissa.jpg"
+        },
+        "3": {
+            "name": "Pan Marek",
+            "instrument": "Cymbal/ drums",
+            "bio": "Marek graduated from a special music school in Minsk with a focus on folk instruments, especially cymbals. He later attended the Belarusian Conservatory, where he continued his education in a master class for cymbals. He was a long-time soloist with the Minsk Philharmonic Orchestra and played drums in jazz orchestras and rock and pop groups, including Singing Guitars, Pesnyary, and Syabry. He is also known as an arranger of folk music. Mr. Schmelkin has lived in Germany since 1990 and has worked in various jazz, rock, and klezmer bands.",
+            "img": "media/img/marek.jpg"
+        }
+    },
+    "gigs": {
+        "current": {},
+        "archive": {
+            "0": {
+                "date": "22. Februar 2025, 19:00 Uhr",
+                "address": "Bar LORENZ, Marienfelder Allee 41, 12277 Berlin"
+            },
+            "1": {
+                "date": "01. März 2025, 21:00 Uhr",
+                "address": "Bar E. & M. Leydicke, Mansteinstr. 4, 10783 Berlin"
+            },
+            "2": {
+                "date": "09. März 2025, 20:00 Uhr",
+                "address": "Kneipe 'Alter Schwede', Schwedenstr. 11A, 13357 Berlin"
+            },
+            "3": {
+                "date": "12. März 2025, 19:00 Uhr",
+                "address": "Primobuch, Herderstr. 24, 12163 Berlin"
+            },
+            "4": {
+                "date": "15. Mai 2025, 20:00 Uhr",
+                "address": "La Bohème, Winsstr. 12, 10405 Berlin"
+            },
+            "5": {
+                "date": "16. Mai 2025, 19:00 Uhr",
+                "address": "Musik Cantus & Riedel, Bismarckstr. 5, 10625 Berlin"
+            },
+            "6": {
+                "date": "17. Mai 2025, 21:00 Uhr",
+                "address": "E. & M. Leydicke, Mansteinstr. 4, 10783 Berlin"
+            },
+            "7": {
+                "date": "23. Mai 2025, 20:00 Uhr",
+                "address": "Zimmertheater Steglitz, Bornstr. 17, 12163 Berlin"
+            },
+            "8": {
+                "date": "24. Mai 2025, 19:00 Uhr",
+                "address": "Kirche Krummensee, Dorfstr. 13, OT Krummensee, 16356 Werneuchen"
+            },
+            "9": {
+                "date": "25. Mai 2025, 20:00 Uhr",
+                "address": "Villa Neukölln, Hermannstr. 233, 12049 Berlin"
+            },
+            "10": {
+                "date": "07. Juni 2025, 19:00 Uhr",
+                "address": "Kulturverein Glienicke e.V., Moskauer Str. 20, 16548 Glienicke"
+            },
+            "11": {
+                "date": "29. Juni 2025, 15:00 Uhr",
+                "address": "Evang. Kirchengemeinde Schöneberg Luther, Bülowstr. 71-72, 10783 Berlin"
+            }
+        }
+    }
+}

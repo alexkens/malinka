@@ -1,8 +1,10 @@
+window.jsonURL = "./media/contentDe.json";
+
 // on load
 $.when( $.ready ).then(async function() {
 
     // content.json
-    const url = "./media/content.json"
+    const url = window.jsonURL;
     const response = await fetch(url);
     const content = await response.json();
 
@@ -17,13 +19,8 @@ $.when( $.ready ).then(async function() {
 
         $( "#footer-tel" ).text(number);
         $( "#footer-email" ).text(email);
-        $( '#facebook-link' ).prop("href", facebookLink);
-
-        
+        $( '#facebook-link' ).prop("href", facebookLink);  
     });
-
-    // footer contact form
-    // contactForm();
 });
 
 // header
@@ -56,8 +53,8 @@ $(document).on("click", "#lang", async function() {
         $(this).text(value);
     });
 
+    window.jsonURL = `./media/content${lang}.json`;
 });
-
 
 
 /*

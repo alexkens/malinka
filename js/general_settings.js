@@ -8,6 +8,10 @@ $.when( $.ready ).then(async function() {
         $("#mode").text("Light");
     }
 
+    // language
+    const savedLang = localStorage.getItem("language");
+    setLanguage(savedLang);
+
     // content.json
     const url = window.jsonURL;
     const response = await fetch(url);
@@ -47,20 +51,26 @@ $(document).on("click", "#lang", async function() {
     const lang = $(this).text();
     $(this).text(lang === "En" ? "De" : "En");
     
+    setLanguage(lang);
+
+    // change json url, so member carousel (index.js) can change language too
+    window.jsonURL = `./media/content${lang}.json`;
+    localStorage.setItem("language", lang);
+});
+
+async function setLanguage(lang) {
     const file = `${lang.toLowerCase()}.json`;
     const response = await fetch(file);
     const content = await response.json();
 
     const elements = $('[data-i18n]');
-    elements.each(function(index, e) {
+    elements.each(function(_, e) {
         let key = e.getAttribute("data-i18n");
         let value = content[key];
         $(this).text(value);
     });
-
-    // change json url, so member carousel (index.js) can change language too
-    window.jsonURL = `./media/content${lang}.json`;
-});
+    //$( "#lang" ).text(lang);
+}
 
 // darkmode
 $(document).on("click", "#mode", function() {

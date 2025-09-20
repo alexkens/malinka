@@ -18,23 +18,20 @@ $.when( $.ready ).then(async function() {
         $( "#footer-tel" ).text(number);
         $( "#footer-email" ).text(email);
         $( '#facebook-link' ).prop("href", facebookLink);
+
+        
     });
 
     // footer contact form
-    contactForm();
+    // contactForm();
 });
 
 // header
 $(document).on("click", '#sidebar-toggle', function() {
-
     let aside = $( "#aside aside" );
-    
     if(aside.length == 0) {
-
         $( "#aside" ).load("partials/aside.html");
-
     } else {
-
         if(aside.css("display") === "none") {
             aside.css("display", "block");
         } else { // display != none
@@ -44,10 +41,44 @@ $(document).on("click", '#sidebar-toggle', function() {
 });
 
 
-function contactForm() {
-    const form = $( "footer div input" );
+$(document).on("click", "#lang", async function() {
+    const lang = $(this).text();
+    $(this).text(lang === "En" ? "De" : "En");
+    
+    const file = `${lang.toLowerCase()}.json`;
+    const response = await fetch(file);
+    const content = await response.json();
 
-    form.on('click', () => {
-        
+    const elements = $('[data-i18n]');
+    elements.each(function(index, e) {
+        let key = e.getAttribute("data-i18n");
+        let value = content[key];
+        $(this).text(value);
     });
+
+});
+
+
+
+/*
+
+function darkmode() {
+
+    const body = document.body;
+    const darkmodeButton = document.getElementById("darkmodeButton");
+
+    if(body.classList.contains("dark")){
+        body.classList.remove("dark");
+        darkmodeButton.innerHTML = "Darkmode";
+
+    } else {
+        body.classList.add("dark");
+        darkmodeButton.innerHTML = "Lightmode";
+    }
 }
+
+
+
+
+
+*/

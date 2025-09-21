@@ -88,12 +88,16 @@ $.when( $.ready ).then(async function() {
 
 function zoomViewListener() {
     $( ".img-container .img img" ).on("click", function() {
+        const overlay = $( "#overlay" );
+        const overlayImg = $( "#overlay-img img" );
         const src = $(this).attr("src");
 
-        const zoom = `<div class="overlay relative bg-black/60 w-full z-1 flex justify-center items-center"><img class="h-100" src=${src}></div>`;
-        const main = $( "main" );
-        main.append(zoom);
-        // $(":root").addClass("saturate-20");
-        
+        overlay.removeClass("hidden");
+        overlay.addClass("block");
+        overlayImg.attr("src", src);
+    });
+
+    $( "#overlay" ).on("click", function() {
+        $(this).addClass("hidden");
     });
 }

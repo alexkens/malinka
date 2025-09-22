@@ -64,9 +64,7 @@ $.when( $.ready ).then(async function() {
     const elements = [$("#header"), $("#footer"), $(".video-title"), $(".img-title")];
 
     for(let index in elements) {
-        if(elements[index].length === 0) {
-            console.log(elements[index]);
-        } else {
+        if(elements[index].length !== 0) {
             elements[index].addClass("opacity-30");
             observer.observe(elements[index][0]);
         }
@@ -136,8 +134,6 @@ function galleryZoomViewListener(imgList) {
 }
 
 function updateViewImg(count, currentImage, overlayImg) {
-    console.log(count);
-    console.log(currentImage);
     const newSrc = `media/img/${currentImage}.jpg`;
     overlayImg.attr("src", newSrc);
 }

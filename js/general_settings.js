@@ -2,23 +2,21 @@ window.jsonURL = "./media/contentDe.json";
 
 // on load
 $.when( $.ready ).then(async function() {
-    // mode
-    if(localStorage.getItem("theme") === "dark") {
-        $("html").addClass("dark");
-        $("#mode").text("Light");
-    }
-
-    // language
-    const savedLang = localStorage.getItem("language");
-    setLanguage(savedLang);
-
     // content.json
     const url = window.jsonURL;
     const response = await fetch(url);
     const content = await response.json();
 
     // load header
-    $( "#header" ).load("partials/header.html");
+    $( "#header" ).load("partials/header.html", function() {
+        // mode     
+        let isDark = localStorage.getItem("theme") == "dark";
+        setMode(isDark);    
+
+        // language
+        const savedLang = localStorage.getItem("language");
+        setLanguage(savedLang);
+    });
 
     // load footer
     $( "#footer" ).load("partials/footer.html", function() {
@@ -77,14 +75,28 @@ $(document).on("click", "#mode", function() {
     const html = $( "html" );
     const isDark = html.hasClass("dark");
 
+    changeMode(isDark, html, "#mode");
+});
+
+function changeMode(isDark, html, element) {
     if(isDark) {
         html.removeClass("dark");
-        $(this).text("Dark");
+        $(element).text("Dark");
         localStorage.setItem("theme", "light");
         
     } else { // !isDark
         html.addClass("dark");
-        $(this).text("Light");
+        $(element).text("Light");
         localStorage.setItem("theme", "dark");
     }
-});
+}
+
+function setMode(isDark) {
+    if(isDark) {
+        $( "html" ).addClass("dark");
+        $("#mode").text("Light");  
+    } else { // !isDark
+        $( "html" ).removeClass("dark");
+        $("#mode").text("Dark");
+    }
+}

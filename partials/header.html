@@ -1,4 +1,4 @@
-<header class="flex justify-between items-center gap-6 dark:bg-slate-600">
+<header class="flex justify-between items-center gap-6 dark:bg-slate-600 h-16 w-full">
 
     <div id="logo">
         <a href="index.html">
@@ -6,22 +6,20 @@
         </a>
     </div>
 
-    <button id="sidebar-toggle">
+    <button id="sidebar-toggle" class="md:hidden ">
         <img class="hover:bg-slate-300 active:border-2 active:border-white w-12 dark:bg-slate-400" src="media/svg/hamburger-menu-svgrepo-com.svg">
     </button>
 
-    <nav class="gap-6 hidden">
-        <ul class="flex items-center gap-5">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.html">Gallerie</a></li>
-            <li><a href="appointments.html">Termine</a></li>
-            <li><a href="#footer">Buchen</a></li>
-        </ul>
-    </nav>
+    <ul class="hidden md:flex justify-center h-full font-avenir dark:text-white">
+        <li><a class="flex justify-center items-center h-full w-20 hover:bg-slate-300 active:text-white dark:active:text-black" href="index.html">Home</a></li>
+        <li><a class="flex justify-center items-center h-full w-20 hover:bg-slate-300 active:text-white dark:active:text-black" href="gallery.html" data-i18n="gallery">Gallerie</a></li>
+        <li><a class="flex justify-center items-center h-full w-20 hover:bg-slate-300 active:text-white dark:active:text-black" href="appointments.html" data-i18n="appointments">Termine</a></li>
+        <li><a class="flex justify-center items-center h-full w-20 hover:bg-slate-300 active:text-white dark:active:text-black" href="#footer" data-i18n="book">Buchen</a></li>
+    </ul>
 
-    <div class="flex flex-col p-2 text-white font-avenir bg-slate-400 dark:!bg-slate-800">
-        <button class="hover:text-slate-300 active:text-black" href="" id="lang">En</button>
-        <button class="hover:text-slate-300 active:text-black" id="mode">Dark</button>
+    <div class="flex flex-col text-white h-full font-avenir bg-slate-400 dark:!bg-slate-800">
+        <button class="flex justify-center items-center px-2 h-full w-full hover:text-slate-300 active:text-black dark:hover:bg-slate-500 dark:active:text-black" id="lang">En</button>
+        <button class="flex justify-center items-center px-2 h-full w-full hover:text-slate-300 active:text-black dark:hover:bg-slate-500 dark:active:text-black" id="mode">Dark</button>
     </div>
 
 </header>

@@ -21,7 +21,6 @@ $.when( $.ready ).then(async function() {
         "img6.jpg",
         "img7.jpg",
         "img8.jpg",
-        "img0.jpg",
     ];
 
     for(let index in videoList) {
@@ -37,8 +36,8 @@ $.when( $.ready ).then(async function() {
 
     for(let index in imgList) {
         const src = `media/img/${imgList[index]}`;
-        const v = `<div class="img${index} relative hover:opacity-75">
-                        <img class="w-130 shadow-md rounded-lg" src=${src} alt="">
+        const v = `<div class="relative hover:opacity-75">
+                        <img class="img${index} w-130 shadow-md rounded-lg" src=${src} alt="">
                     </div>`;
         img.append(v);
     }
@@ -62,11 +61,9 @@ $.when( $.ready ).then(async function() {
     }
 
     // elements to be faded in
-    
     const elements = [$("#header"), $("#footer"), $(".video-title"), $(".img-title")];
 
     for(let index in elements) {
-        
         if(elements[index].length === 0) {
             console.log(elements[index]);
         } else {
@@ -84,11 +81,12 @@ $.when( $.ready ).then(async function() {
         observer.observe(e);
     });
     
-
-    zoomViewListener();
+    galleryZoomViewListener(imgList);
 });
 
-function zoomViewListener() {
+function galleryZoomViewListener(imgList) {
+
+    var currentImage = "";
 
     // svg listener
     const imgElements = $( ".img-container div" );
@@ -103,21 +101,43 @@ function zoomViewListener() {
             });
     });
 
-    // overlay
+    // open overlay
     $( ".img-container div img" ).on("click", function() {
-        const overlay = $( "#overlay" );
+        $( "#overlay" ).removeClass("hidden");
+        $( "#overlay" ).addClass("block");
+        $( "#overlay-img" ).attr("src", $(this).attr("src"));
+
+        currentImage = $(this)[0].classList[0];
+    });    
+
+    $( "#overlay-arrowL" ).on("click", function(e) {
+        e.stopPropagation();
+
         const overlayImg = $( "#overlay-img" );
-        const src = $(this).attr("src");
+        let count = parseInt(currentImage.at(-1));
+        count - 1 < 0 ? count = imgList.length - 1 : count--;
+        currentImage = `img${count}`;
+        updateViewImg(count, currentImage, overlayImg);
+    });
+    $( "#overlay-arrowR" ).on("click", function(e) {
+        e.stopPropagation();
 
-        console.log(overlayImg);
-        console.log(src);
-
-        overlay.removeClass("hidden");
-        overlay.addClass("block");
-        overlayImg.attr("src", src);
+        const overlayImg = $( "#overlay-img" );
+        let count = parseInt(currentImage.at(-1));
+        count + 1 >= imgList.length ? count = 0 : count++;
+        currentImage = `img${count}`;
+        updateViewImg(count, currentImage, overlayImg);
     });
 
+    // close overlay
     $( "#overlay" ).on("click", function() {
         $(this).addClass("hidden");
     });
+}
+
+function updateViewImg(count, currentImage, overlayImg) {
+    console.log(count);
+    console.log(currentImage);
+    const newSrc = `media/img/${currentImage}.jpg`;
+    overlayImg.attr("src", newSrc);
 }

@@ -10,8 +10,6 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@4.1.13/index.min.css" rel="stylesheet">
     <script src="js/general_settings.js" defer></script>
     <script src="js/gallery.js" defer></script>
-    <script src="js/contact.js" defer></script>
-    <script src="js/index_observer.js" defer></script>
 </head>
 <body>
 
@@ -27,13 +25,17 @@
 
         <div id="overlay" class="fixed hidden w-full h-full top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.7)] z-50 cursor-pointer">
             
-            <div id="overlay-img" class="absolute text-white text-6xl font-avenir">
+            <div class="text-white text-6xl font-avenir flex justify-center items-center mt-35 mx-20">
 
-                <img class="w-10 absolute top-[50%] left-0" src="media/svg/arrows-long-left-svgrepo-com.svg" alt="">
+                <a href="">
+                    <img class="w-20 absolute top-[50%] left-0 hover:bg-slate-300" src="media/svg/arrows-long-left-svgrepo-com.svg" alt="">
+                </a>
             
-                <img class="h-100" src=""></div>
+                <img id="overlay-img" class="h-100" src=""></div>
                 
-                <img class="w-10 absolute top-[50%] right-0" src="media/svg/arrows-long-right-svgrepo-com.svg" alt="">
+                <a href="">
+                    <img class="w-20 absolute top-[50%] right-0 hover:bg-slate-300" src="media/svg/arrows-long-right-svgrepo-com.svg" alt="">
+                </a>
 
             </div>
         </div>

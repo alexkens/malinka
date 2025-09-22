@@ -37,7 +37,7 @@ $.when( $.ready ).then(async function() {
 
     for(let index in imgList) {
         const src = `media/img/${imgList[index]}`;
-        const v = `<div class="img hover:opacity-75">
+        const v = `<div class="img${index} relative hover:opacity-75">
                         <img class="w-130 shadow-md rounded-lg" src=${src} alt="">
                     </div>`;
         img.append(v);
@@ -62,6 +62,7 @@ $.when( $.ready ).then(async function() {
     }
 
     // elements to be faded in
+    
     const elements = [$("#header"), $("#footer"), $(".video-title"), $(".img-title")];
 
     for(let index in elements) {
@@ -82,15 +83,34 @@ $.when( $.ready ).then(async function() {
         e.classList.add("opacity-30");
         observer.observe(e);
     });
+    
 
     zoomViewListener();
 });
 
 function zoomViewListener() {
-    $( ".img-container .img img" ).on("click", function() {
+
+    // svg listener
+    const imgElements = $( ".img-container div" );
+    imgElements.each((_, el) => {
+        $(el)
+            .on("mouseenter", function() {
+                const svg = `<img class="zoom-svg w-10 absolute inline top-[45%] left-[45%]" src="media/svg/zoom-in-1462-svgrepo-com.svg">`;
+                $(this ).append(svg);
+            })
+            .on("mouseleave", function() {
+                $( ".zoom-svg" ).remove();
+            });
+    });
+
+    // overlay
+    $( ".img-container div img" ).on("click", function() {
         const overlay = $( "#overlay" );
-        const overlayImg = $( "#overlay-img img" );
+        const overlayImg = $( "#overlay-img" );
         const src = $(this).attr("src");
+
+        console.log(overlayImg);
+        console.log(src);
 
         overlay.removeClass("hidden");
         overlay.addClass("block");

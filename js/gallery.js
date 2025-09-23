@@ -26,10 +26,10 @@ $.when( $.ready ).then(async function() {
     for(let index in videoList) {
         const src = `media/video/${videoList[index]}`;
         if(index == 0) {
-            const v = `<div class=""><video class="w-130 shadow-md  rounded-lg" src=${src} controls muted autoplay></video></div>`;
+            const v = `<div class="mx-4"><video class="w-130 shadow-md  rounded-lg" src=${src} controls muted autoplay></video></div>`;
             video.append(v);
         } else {
-            const v = `<div class=""><video class="w-130 shadow-md rounded-lg" src=${src} controls></video></div>`;
+            const v = `<div class="mx-4"><video class="w-130 shadow-md rounded-lg" src=${src} controls></video></div>`;
             video.append(v);
         }
     }

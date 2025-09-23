@@ -19,7 +19,7 @@ $.when( $.ready ).then(async function() {
             const date = gig["date"];
             const address = gig["address"];
 
-            const appointment = `<div class="archive-date bg-slate-300 w-120 rounded-xl p-6  text-slate-700 shadow-md"><h3 class="font-bold">${date}</h3><p>${address}</p></div>`;
+            const appointment = `<div class="archive-date bg-slate-300 rounded-xl p-6  text-slate-700 shadow-md"><h3 class="font-bold">${date}</h3><p>${address}</p></div>`;
 
             $( `.${gigs[key]}-container` ).append(appointment);
         }

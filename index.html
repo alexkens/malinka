@@ -22,17 +22,26 @@
 
     <main>
 
-        <div id="hero" class="bg-slate-300 dark:!bg-slate-500 w-full h-80 flex items-center justify-center gap-5">
+        <div id="hero" class="bg-slate-300 dark:!bg-slate-500 w-full h-80 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
 
-            <button onclick="heroCarouselL()">
-                <img class="w-10 hover:bg-slate-500 active:bg-slate-700" src="media/svg/arrows-long-left-svgrepo-com.svg">
+            <button class="hidden md:block px-4" onclick="heroCarouselL()">
+                <img class="w-10 bg-slate-500 hover:bg-slate-700 active:opacity-50" src="media/svg/arrows-long-left-svgrepo-com.svg">
             </button>
             <div id="hero-wrapper">
                 <img id="hero-carousel" class=" w-80 h-50 md:w-100 md:h-60 shadow-md" src="">
             </div>
-            <button onclick="heroCarouselR()">
-                <img class="w-10 hover:bg-slate-500 active:bg-slate-700" src="media/svg/arrows-long-right-svgrepo-com.svg">
+            <button class="hidden md:block px-4" onclick="heroCarouselR()">
+                <img class="w-10 bg-slate-500 hover:bg-slate-700 active:opacity-50" src="media/svg/arrows-long-right-svgrepo-com.svg">
             </button>
+
+            <div class="md:hidden flex gap-0.5">
+                <button class="" onclick="heroCarouselL()">
+                    <img class="w-10 bg-slate-500 hover:bg-slate-700 active:opacity-50" src="media/svg/arrows-long-left-svgrepo-com.svg">
+                </button>
+                <button class="" onclick="heroCarouselR()">
+                <img class="w-10 bg-slate-500 hover:bg-slate-700 active:opacity-50" src="media/svg/arrows-long-right-svgrepo-com.svg">
+            </button>
+            </div>
 
         </div>
 

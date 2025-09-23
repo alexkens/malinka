@@ -16,6 +16,9 @@ $.when( $.ready ).then(async function() {
         // language
         const savedLang = localStorage.getItem("language");
         setLanguage(savedLang);
+
+        // fixed header when scrolling up
+        fixedHeader();
     });
 
     // load footer
@@ -105,4 +108,41 @@ function setMode(isDark) {
         $( "html" ).removeClass("dark");
         $("#mode").text("Dark");
     }
+}
+
+// fixed header when scrolling up
+function fixedHeader() {
+    $(window).on("scroll", throttle(validateHeader, 1000));
+}
+
+function throttle(func, time) {
+    let lastTime = 0;
+    return () => {
+        const now = new Date();
+        if(now - lastTime >= time) {
+            func();
+            time = now;
+        }
+    };
+}
+
+let lastScroll = 0;
+
+function validateHeader() {
+    const offset = $( "header" ).prop("scrollHeight") + 100;
+    currentScroll = $(this).scrollTop();
+
+    if(currentScroll < offset) {
+        $( "header" ).removeClass("fixed");
+        $( "header" ).addClass("relative");
+    } else if(currentScroll >= lastScroll) {
+        lastScroll = currentScroll;
+        $( "header" ).removeClass("fixed");
+        $( "header" ).addClass("relative");
+    } else { // currentScroll < lastScroll
+        lastScroll = currentScroll;
+        $( "header" ).removeClass("relative");
+        $( "header" ).addClass("fixed");
+    }
+
 }

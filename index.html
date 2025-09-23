@@ -28,7 +28,7 @@
                 <img class="w-10 hover:bg-slate-500 active:bg-slate-700" src="media/svg/arrows-long-left-svgrepo-com.svg">
             </button>
             <div id="hero-wrapper">
-                <img id="hero-carousel" class="h-65 w-120 shadow-md" src="">
+                <img id="hero-carousel" class=" w-80 h-50 md:w-100 md:h-60 shadow-md" src="">
             </div>
             <button onclick="heroCarouselR()">
                 <img class="w-10 hover:bg-slate-500 active:bg-slate-700" src="media/svg/arrows-long-right-svgrepo-com.svg">
@@ -38,20 +38,20 @@
 
         <div id="profile" class="profile flex flex-col justify-center items-center p-5 gap-5 dark:bg-slate-400 dark:text-white">
 
-            <div class="profile-title flex items-center gap-2 text-5xl font-futura text-shadow-md ">
+            <div class="profile-title flex items-center gap-2 text-2xl md:text-5xl font-futura text-shadow-md ">
                 <h1>The</h1>
-                <img class="" src="media/logo/MALINKA logo 244x97.png">
+                <img class="w-[60%] h-[60%] md:w-full md:h-full" src="media/logo/MALINKA logo 244x97.png">
                 <h1>Band</h1>
             </div>
 
-            <p class="profile-text w-100 text-justify font-avenir pre">
+            <p class="profile-text w-70 sm:w-80 md:w-100 text-justify font-avenir pre">
                 <span data-i18n="band-text1">Falls Sie für Ihr Lokal oder Ihre Verstanstaltung ein Highlight brauchen, müssen Sie nicht mehr weiter suchen. Wir sind die</span>
                 <span class="text-red-500 font-black text-lg dark:!text-red-800">Malinka</span>
                 <span class="font-bold">Band</span><span data-i18n="band-text2">. Eine vielseitige Truppe von passionierten Musikern und Unterhaltungskünstlern aus Berlin. Unsere Wurzeln sind vertraut und doch geheimnisvoll. Und so bringen wir Klang und Kultur aus dem Kreise Deutschland, Ukraine und Polen.</span>
             </p>
 
-            <h2 class="genre-title text-2xl text-red-500 font-bold text-center font-avenir text-shadow-md dark:!text-red-800">Genres</h2>
-            <div class="genre-genres font-avenir text-slate-600 text-lg font-semibold flex gap-4 text-shadow-md dark:!text-white">
+            <h2 class="genre-title text-xl md:text-2xl text-red-500 font-bold text-center font-avenir text-shadow-md dark:!text-red-800">Genres</h2>
+            <div class="genre-genres font-avenir text-slate-600 text-md md:text-lg font-semibold w-50 md:w-full flex flex-wrap justify-center items-center gap-4 text-shadow-md dark:!text-white">
                 <h3>Klezmer</h3>
                 <h3 data-i18n="genre1">Ukrainische-</h3>
                 <h3 data-i18n="genre2">Polnische-</h3>
@@ -62,7 +62,7 @@
             <div class="flex flex-col gap-6 items-center w-full">
 
                 <a href="#footer">
-                    <button class="contact-button flex justify-evenly items-center gap-2 bg-slate-500 w-30 h-10 text-white font-avenir shadow-md">
+                    <button class="contact-button flex justify-evenly items-center gap-2 bg-slate-500 w-30 h-10 text-white font-avenir shadow-md hover:bg-slate-700 active:opacity-50">
                         <img class="w-5" src="media/svg/arrows-long-right.svg">
                         <p data-i18n="contact">Kontakt</p>
                     </button>
@@ -91,17 +91,17 @@
             
             </div>
 
-        </div>          
+        </div>
 
-        <div class="bg-slate-300 h-120 flex flex-col justify-center items-center">
+        <div class="bg-slate-300 md:h-120 text-center md:text-center flex flex-col justify-center items-center">
 
             <div id="members" class="bg-white w-[100%] h-[80%] flex items-center justify-center gap-8 dark:!bg-slate-500">
 
-                <button onclick="memberArrow(-1)">
+                <button class="hidden md:block" onclick="memberArrow(-1)">
                     <img class="member-arrowL w-10 bg-slate-300 hover:bg-slate-500 active:bg-slate-700" src="media/svg/arrows-long-left-svgrepo-com.svg" alt="">
                 </button>
 
-                <div class="flex items-center justify-center gap-8 p-10 members-inner">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8 p-10 members-inner">
                     <div class="w-80 flex flex-col gap-2 dark:text-white">
                         <h2 class="member-name text-xl"></h2>
                         <p class="member-instrument"></p>
@@ -110,12 +110,21 @@
                     <img class="member-img h-96" src="">
                 </div>
 
-                <button onclick="memberArrow(1)">
+                <button class="hidden md:block" onclick="memberArrow(1)">
                     <img class="member-arrowR w-10 bg-slate-300 hover:bg-slate-500 active:bg-slate-700" src="media/svg/arrows-long-right-svgrepo-com.svg" alt="">
                 </button>
             </div>
 
-            <div class="">
+            <div class="md:hidden flex gap-0.5">
+                <button onclick="memberArrow(-1)">
+                    <img class="member-arrowL w-10 bg-slate-500 hover:opacity-40 active:bg-slate-700" src="media/svg/arrows-long-left-svgrepo-com.svg" alt="">
+                </button>
+                <button onclick="memberArrow(1)">
+                    <img class="member-arrowR w-10 bg-slate-500 hover:opacity-40 active:bg-slate-700" src="media/svg/arrows-long-right-svgrepo-com.svg" alt="">
+                </button>
+            </div>
+
+            <div class="hidden md:block">
                 <ul id="member-carousel" class="bg-slate-300 w-full list-disc text-4xl flex gap-8 text-slate-700">
                     <li class="0"><a href=""></a></li>
                     <li class="1"><a href=""></a></li>

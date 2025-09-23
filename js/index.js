@@ -54,7 +54,7 @@ $.when( $.ready ).then(async function() {
     for(let index in elements) {
         
         if(elements[index].length === 0) {
-            console.log(elements[index]);
+            // console.log(elements[index]);
         } else {
             elements[index].addClass("opacity-30");
             observer.observe(elements[index][0]);

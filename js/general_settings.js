@@ -47,16 +47,23 @@ $(document).on("click", '#sidebar-toggle', function() {
 // change language
 $(document).on("click", "#lang", async function() {
     const lang = $(this).text();
-    $(this).text(lang === "En" ? "De" : "En");
-    
+    const otherLanguage = lang === "En" ? "De" : "En";
+    $(this).text(otherLanguage);
     setLanguage(lang);
 
-    // change json url, so member carousel (index.js) can change language too
-    window.jsonURL = `./media/content${lang}.json`;
+    // set language item in local storage
     localStorage.setItem("language", lang);
 });
 
 async function setLanguage(lang) {
+    // change toggle
+    const otherLang = lang === "En" ? "De" : "En";
+    $( "#lang" ).text(otherLang);
+
+    // change json url, so member carousel (index.js) can change language too
+    window.jsonURL = `./media/content${lang}.json`;
+
+    // rest of html
     const file = `${lang.toLowerCase()}.json`;
     const response = await fetch(file);
     const content = await response.json();
@@ -67,7 +74,6 @@ async function setLanguage(lang) {
         let value = content[key];
         $(this).text(value);
     });
-    //$( "#lang" ).text(lang);
 }
 
 // darkmode

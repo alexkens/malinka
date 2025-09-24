@@ -9,13 +9,18 @@ $.when( $.ready ).then(async function() {
 
     // load header
     $( "#header" ).load("partials/header.html", function() {
-        // mode     
-        let isDark = localStorage.getItem("theme") == "dark";
-        setMode(isDark);    
+        // mode
+        const themeVar = localStorage.getItem("theme");
+        if(themeVar) {
+            let isDark = themeVar == "dark";
+        setMode(isDark);
+        }    
 
         // language
         const savedLang = localStorage.getItem("language");
-        setLanguage(savedLang);
+        if(savedLang) {
+            setLanguage(savedLang);
+        }
 
         // fixed header when scrolling up
         fixedHeader();

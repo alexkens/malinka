@@ -12,7 +12,7 @@
 
             <div class="bg-slate-400 md:bg-slate-300 w-full h-10 dark:!bg-slate-500"></div>
 
-            <form id="target" class="flex flex-col justify-center gap-4 w-70 py-4 px-6 font-avenir dark:!bg-slate-400 dark:text-white">
+            <form action="/processForm.php" method="post" target="_self" class="flex flex-col justify-center gap-4 w-70 py-4 px-6 font-avenir dark:!bg-slate-400 dark:text-white">
 
                 <div>
                     <label for="name">Name</label>
@@ -34,7 +34,7 @@
                     <textarea class="border w-full" name="message" id="message"></textarea>
                 </div>
 
-                <div class="">
+                <div id="contact-submit-button">
                     <button data-i18n="submit-button" class="bg-slate-500 w-full text-white shadow-md h-10">Absenden</button>
                 </div>
             </form>

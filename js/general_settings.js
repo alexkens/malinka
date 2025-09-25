@@ -34,7 +34,7 @@ $.when( $.ready ).then(async function() {
 
         $( "#footer-tel" ).text(number);
         $( "#footer-email" ).text(email);
-        $( '#facebook-link' ).prop("href", facebookLink);  
+        $( '#facebook-link' ).prop("href", facebookLink);
     });
 });
 
@@ -149,5 +149,4 @@ function validateHeader() {
         $( "header" ).removeClass("relative");
         $( "header" ).addClass("fixed");
     }
-
 }
